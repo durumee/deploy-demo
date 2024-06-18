@@ -1,0 +1,8 @@
+[submodule "frontend/react-demo"]
+	path = frontend/react-demo
+	url = https://github.com/durumee/react-demo
+[submodule "backend/boot-demo"]
+	path = backend/boot-demo
+	url = https://github.com/durumee/spring-boot-demo.git
+[submodule "backend/boot-demo/db-docker"]
+	branch = db-docker
