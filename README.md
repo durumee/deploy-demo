@@ -4,50 +4,67 @@
 
 ## git clone 이후 최초 실행
 
-> git clone --recurse-submodules https://github.com/durumee/deploy-demo.git
+```sh
+git clone --recurse-submodules https://github.com/durumee/deploy-demo.git
+```
 
 
 ## 최초 구축 시의 명령어 나열
 
-> git submodule add https://github.com/durumee/react-demo ./frontend/react-demo
-> git submodule add https://github.com/durumee/spring-boot-demo.git ./backend/boot-demo
+```sh
+git submodule add https://github.com/durumee/react-demo ./frontend/react-demo
+git submodule add https://github.com/durumee/spring-boot-demo.git ./backend/boot-demo
+```
 
 ## 특정 브랜치를 사용하기 위해 submodule.경로.branch 브랜치명 추가
 
-> git config -f .gitmodules submodule.backend/boot-demo.branch db-docker
+```sh
+git config -f .gitmodules submodule.backend/boot-demo.branch db-docker
+```
 
 # 업데이트 & 리빌드
 
 ## 한번에 서브모듈 갱신
 
-> git submodule update --remote
+```sh
+git submodule update --remote
+```
 
 ## (개별갱신) db-docker 의 경우 db-docker 브랜치 업데이트
 
-> git fetch origin
-> git checkout db-docker
-> git pull origin db-docker
+```sh
+git fetch origin
+git checkout db-docker
+git pull origin db-docker
+```
 
 ## (개별갱신) 프론트의 경우 main 브랜치 업데이트
 
-> git fetch origin
-> git checkout main
-> git pull origin main
+```sh
+git fetch origin
+git checkout main
+git pull origin main
+```
 
 ## 메인 저장소에 해시 정보 갱신
 
-> git add backend/boot-demo frontend/react-demo
-> git commit -m "변경 해시 반영"
-> git push
-
+```sh
+git add backend/boot-demo frontend/react-demo
+git commit -m "변경 해시 반영"
+git push
+```
 
 # 최초 리포지토리에 서브모듈 구축 시의 명령어 나열
 
-> git submodule add https://github.com/durumee/react-demo ./frontend/react-demo
-> git submodule add https://github.com/durumee/spring-boot-demo.git ./backend/boot-demo
-> cd ./backend/boot-demo
+```sh
+git submodule add https://github.com/durumee/react-demo ./frontend/react-demo
+git submodule add https://github.com/durumee/spring-boot-demo.git ./backend/boot-demo
+cd ./backend/boot-demo
+```
 
 ## 특정 브랜치를 대상으로 빌드
 
-> git checkout -b db-docker origin/db-docker
-> cd ../../
+```sh
+git checkout -b db-docker origin/db-docker
+cd ../../
+```
