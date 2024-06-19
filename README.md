@@ -64,6 +64,6 @@ cd ./backend/boot-demo
 ## 특정 브랜치를 대상으로 빌드
 
 ```sh
-git checkout -b db-docker origin/db-docker
+git checkout -b jwt-oauth origin/jwt-oauth
 cd ../../
 ```

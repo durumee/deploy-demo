@@ -1,28 +1,28 @@
 services:
-  mysql:
-    image: mysql:latest
-    container_name: dev-mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root!@34
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: devuser
-      MYSQL_PASSWORD: 1234
-    ports:
-      - "3306:3306"
-    networks:
-      - app-network
-    volumes:
-      - mysql-data:/var/lib/mysql
+  # mysql:
+  #   image: mysql:latest
+  #   container_name: dev-mysql
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root!@34
+  #     MYSQL_DATABASE: mydatabase
+  #     MYSQL_USER: devuser
+  #     MYSQL_PASSWORD: 1234
+  #   ports:
+  #     - "3306:3306"
+  #   networks:
+  #     - app-network
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
 
-  mongodb:
-    image: mongo:latest
-    container_name: dev-mongodb
-    ports:
-      - "27017:27017"
-    networks:
-      - app-network
-    volumes:
-      - mongo-data:/data/db
+  # mongodb:
+  #   image: mongo:latest
+  #   container_name: dev-mongodb
+  #   ports:
+  #     - "27017:27017"
+  #   networks:
+  #     - app-network
+  #   volumes:
+  #     - mongo-data:/data/db
 
   backend:
     build:
@@ -32,14 +32,14 @@ services:
       - "8080:8080"
     networks:
       - app-network
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://dev-mysql:3306/mydatabase
-      SPRING_DATASOURCE_USERNAME: devuser
-      SPRING_DATASOURCE_PASSWORD: 1234
-      SPRING_MONGODB_URI: mongodb://dev-mongodb:27017/mydatabase
-    depends_on:
-      - mysql
-      - mongodb
+    # environment:
+    #   SPRING_DATASOURCE_URL: jdbc:mysql://dev-mysql:3306/mydatabase
+    #   SPRING_DATASOURCE_USERNAME: devuser
+    #   SPRING_DATASOURCE_PASSWORD: 1234
+    #   SPRING_MONGODB_URI: mongodb://dev-mongodb:27017/mydatabase
+    # depends_on:
+    #   - mysql
+    #   - mongodb
 
   frontend:
     build:
@@ -50,9 +50,9 @@ services:
     networks:
       - app-network
 
-volumes:
-  mysql-data:
-  mongo-data:
+# volumes:
+#   mysql-data:
+#   mongo-data:
 
 
 networks:
