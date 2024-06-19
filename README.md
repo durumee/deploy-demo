@@ -8,7 +8,6 @@
 git clone --recurse-submodules https://github.com/durumee/deploy-demo.git
 ```
 
-
 ## 최초 구축 시의 명령어 나열
 
 ```sh
@@ -19,7 +18,7 @@ git submodule add https://github.com/durumee/spring-boot-demo.git ./backend/boot
 ## 특정 브랜치를 사용하기 위해 submodule.경로.branch 브랜치명 추가
 
 ```sh
-git config -f .gitmodules submodule.backend/boot-demo.branch db-docker
+git config -f .gitmodules submodule.backend/boot-demo.branch jwt-oauth
 ```
 
 # 업데이트 & 리빌드
@@ -30,12 +29,12 @@ git config -f .gitmodules submodule.backend/boot-demo.branch db-docker
 git submodule update --remote
 ```
 
-## (개별갱신) db-docker 의 경우 db-docker 브랜치 업데이트
+## (개별갱신) jwt-oauth 의 경우 jwt-oauth 브랜치 업데이트
 
 ```sh
 git fetch origin
-git checkout db-docker
-git pull origin db-docker
+git checkout jwt-oauth
+git pull origin jwt-oauth
 ```
 
 ## (개별갱신) 프론트의 경우 main 브랜치 업데이트
